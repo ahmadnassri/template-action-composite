@@ -1,5 +1,5 @@
 additional:
-  # temporarily include repos manually # https://github.com/github/docs/issues/3630
+  # temporarily include repos manually # https://github.com/github/docs/issues/4894
   - "template-*"
 
 files:
@@ -8,3 +8,4 @@ files:
   - "!colophon.yml"
   - "!docker-compose.yml"
   - "!**/template-sync.yml"
+  - "!.github/workflows/push.yml"
