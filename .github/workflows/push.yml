@@ -73,6 +73,7 @@ jobs:
 
   release:
     needs:
+      - metadata
       - commit-lint
       - super-linter
 
