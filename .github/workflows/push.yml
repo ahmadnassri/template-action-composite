@@ -2,7 +2,9 @@
 # Note: this file is automatically managed in template-action-composite #
 # --------------------------------------------------------------------- #
 
-on: push
+on:
+  - push
+  - workflow_dispatch
 
 name: push
 
@@ -41,37 +43,16 @@ jobs:
         with:
           fetch-depth: 0
 
-      - uses: github/super-linter@v4.0.2
+      - uses: github/super-linter/slim@v4
         env:
           LOG_LEVEL: ERROR
           VALIDATE_ALL_CODEBASE: false
           FILTER_REGEX_EXCLUDE: '/github/workspace/README.md|test/fixtures/*'
           GITHUB_TOKEN: ${{ github.token }}
 
-  template-sync:
-    timeout-minutes: 20
-
-    needs:
-      - metadata
-      - commit-lint
-      - super-linter
-
-    # only runs on main branch and only for the template
-    if: github.ref == 'refs/heads/master' &&
-        fromJSON(needs.metadata.outputs.repository).is_template
-
-    runs-on: ubuntu-latest
-
-    steps:
-      - uses: ahmadnassri/action-workflow-queue@v1.1
-
-      - uses: actions/checkout@v2
-
-      - uses: ahmadnassri/action-template-repository-sync@v1.6.0
-        with:
-          github-token: ${{ secrets.GH_TOKEN }}
-
   release:
+    timeout-minutes: 5
+
     needs:
       - metadata
       - commit-lint
@@ -80,8 +61,6 @@ jobs:
     # only runs on main branch for non template repos
     if: github.ref == 'refs/heads/master' &&
         !fromJSON(needs.metadata.outputs.repository).is_template
-
-    timeout-minutes: 10
 
     runs-on: ubuntu-latest
 
@@ -119,3 +98,26 @@ jobs:
             const tag = 'tags/${{ matrix.alias.version }}'
             await github.git.deleteRef({ ...context.repo, ref: tag }).catch(() => {})
             await github.git.createRef({ ...context.repo, ref: `refs/${tag}` , sha: process.env.GITHUB_SHA })
+
+  template-sync:
+    timeout-minutes: 20
+
+    needs:
+      - metadata
+      - commit-lint
+      - super-linter
+
+    # only runs on main branch and only for the template
+    if: github.ref == 'refs/heads/master' &&
+        fromJSON(needs.metadata.outputs.repository).is_template
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: ahmadnassri/action-workflow-queue@v1.1
+
+      - uses: actions/checkout@v2
+
+      - uses: ahmadnassri/action-template-repository-sync@v1.6.0
+        with:
+          github-token: ${{ secrets.GH_TOKEN }}
