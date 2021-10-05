@@ -59,8 +59,7 @@ jobs:
       - super-linter
 
     # only runs on main branch for non template repos
-    if: github.ref == 'refs/heads/master' &&
-        !fromJSON(needs.metadata.outputs.repository).is_template
+    if: ${{ github.ref == 'refs/heads/master' && !fromJSON(needs.metadata.outputs.repository).is_template }}
 
     runs-on: ubuntu-latest
 
