@@ -1,8 +1,8 @@
 version: 2.0
 
-id: template-template
+id: template-action-composite
 
 about:
-  title: Template for templates
-  description: A template for GitHub Template Repositories!
-  repository: ahmadnassri/template-template
+  title: Template GitHub Composite Actions
+  description: A template for GitHub Template GitHub Composite Actions
+  repository: ahmadnassri/template-action-composite
