@@ -1,6 +1,6 @@
-# --------------------------------------------------------------------- #
-# Note: this file is automatically managed in template-action-composite #
-# --------------------------------------------------------------------- #
+# ------------------------------------------------------- #
+# Note: this file originates in template-action-composite #
+# ------------------------------------------------------- #
 
 on:
   - push
@@ -46,7 +46,9 @@ jobs:
       - uses: github/super-linter/slim@v4
         env:
           LOG_LEVEL: ERROR
-          VALIDATE_ALL_CODEBASE: false
+          VALIDATE_JSCPD: 'false'
+          VALIDATE_ALL_CODEBASE: 'false'
+          IGNORE_GITIGNORED_FILES: 'true'
           FILTER_REGEX_EXCLUDE: '/github/workspace/README.md|test/fixtures/*'
           GITHUB_TOKEN: ${{ github.token }}
 
@@ -107,8 +109,7 @@ jobs:
       - super-linter
 
     # only runs on main branch and only for the template
-    if: github.ref == 'refs/heads/master' &&
-        fromJSON(needs.metadata.outputs.repository).is_template
+    if: ${{ github.ref == 'refs/heads/master' && fromJSON(needs.metadata.outputs.repository).is_template }}
 
     runs-on: ubuntu-latest
 
