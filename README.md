@@ -1,6 +1,6 @@
-# Template for templates
+# Template GitHub Composite Actions
 
-A template for GitHub Template Repositories!
+A template for GitHub Template GitHub Composite Actions
 
 [![license][license-img]][license-url]
 [![super linter][super-linter-img]][super-linter-url]
@@ -18,16 +18,16 @@ Automated through [`@ahmadnassri/action-template-repository-sync`][]
 > Twitter: [@AhmadNassri](https://twitter.com/AhmadNassri)
 
 [license-url]: LICENSE
-[license-img]: https://badgen.net/github/license/ahmadnassri/template-template
+[license-img]: https://badgen.net/github/license/ahmadnassri/template-action-composite
 
-[release-url]: https://github.com/ahmadnassri/template-template/releases
-[release-img]: https://badgen.net/github/release/ahmadnassri/template-template
+[release-url]: https://github.com/ahmadnassri/template-action-composite/releases
+[release-img]: https://badgen.net/github/release/ahmadnassri/template-action-composite
 
-[super-linter-url]: https://github.com/ahmadnassri/template-template/actions?query=workflow%3Asuper-linter
-[super-linter-img]: https://github.com/ahmadnassri/template-template/workflows/super-linter/badge.svg
+[super-linter-url]: https://github.com/ahmadnassri/template-action-composite/actions?query=workflow%3Asuper-linter
+[super-linter-img]: https://github.com/ahmadnassri/template-action-composite/workflows/super-linter/badge.svg
 
-[commit-lint-url]: https://github.com/ahmadnassri/template-template/actions?query=workflow%3Acommit-lint
-[commit-lint-img]: https://github.com/ahmadnassri/template-template/workflows/commit-lint/badge.svg
+[commit-lint-url]: https://github.com/ahmadnassri/template-action-composite/actions?query=workflow%3Acommit-lint
+[commit-lint-img]: https://github.com/ahmadnassri/template-action-composite/workflows/commit-lint/badge.svg
 
-[semantic-url]: https://github.com/ahmadnassri/template-template/actions?query=workflow%3Arelease
+[semantic-url]: https://github.com/ahmadnassri/template-action-composite/actions?query=workflow%3Arelease
 [semantic-img]: https://badgen.net/badge/📦/semantically%20released/blue
