@@ -1,3 +1,7 @@
+# ------------------------------------------------------- #
+# Note: this file originates in template-action-composite #
+# ------------------------------------------------------- #
+
 version: '3.8'
 
 services:
