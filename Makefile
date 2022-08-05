@@ -9,10 +9,10 @@
 pull: ## pull latest containers
 	@docker compose pull
 
-lint: clean ## run super-linter
+lint: ## run super-linter
 	@docker compose run --rm lint
 
-readme: clean ## run readme action
+readme: ## run readme action
 	@docker compose run --rm readme
 
 clean: ## remove running containers, volumes, node_modules & anything else
