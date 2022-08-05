@@ -10,4 +10,3 @@ files:
   - "!docs/**"
   - "!colophon.yml"
   - "!**/template-sync.yml"
-  - "!.github/workflows/push.yml"
