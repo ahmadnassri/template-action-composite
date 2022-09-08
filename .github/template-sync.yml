@@ -4,6 +4,7 @@ additional:
   - action-npm-global-path
   - action-google-cloud-sql-proxy
   - action-github-registry-npm-proxy
+  - action-dotenv
 
 files:
   - "!README.md"
