@@ -5,6 +5,7 @@ additional:
   - action-google-cloud-sql-proxy
   - action-github-registry-npm-proxy
   - action-dotenv
+  - action-changed-files
 
 files:
   - "!README.md"
