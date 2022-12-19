@@ -12,3 +12,4 @@ files:
   - "!docs/**"
   - "!colophon.yml"
   - "!**/template-sync.yml"
+  - "!.github/dependabot.yml"
