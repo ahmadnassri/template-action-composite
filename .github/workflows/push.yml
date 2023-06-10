@@ -11,6 +11,8 @@ name: push
 concurrency:
   group: ${{ github.ref }}-${{ github.workflow }}
 
+permissions: read-all
+
 jobs:
   metadata:
     runs-on: ubuntu-latest
@@ -74,6 +76,10 @@ jobs:
       needs.metadata.outputs.repository_default_branch == github.ref_name
 
     runs-on: ubuntu-latest
+
+    permissions:
+      contents: write
+      packages: write
 
     outputs:
       published: ${{ steps.release.outputs.published }}
