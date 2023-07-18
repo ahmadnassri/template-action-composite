@@ -67,4 +67,3 @@ jobs:
       - uses: ahmadnassri/actions/.github/workflows/alias-tag.yml@master
         with:
           name: ${{ matrix.alias.version }}
-
