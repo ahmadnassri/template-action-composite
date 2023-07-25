@@ -29,4 +29,3 @@ jobs:
     uses: ahmadnassri/actions/.github/workflows/template-sync.yml@master
     with:
       event: pull_request_target
-      ref: ${{ github.ref }}
