@@ -28,4 +28,5 @@ jobs:
     secrets: inherit
     uses: ahmadnassri/actions/.github/workflows/template-sync.yml@master
     with:
+      ref: ${{ github.ref_name }}
       event: pull_request_target
