@@ -9,7 +9,7 @@ additional:
 
 files:
   - "!README.md"
-  - "!docs/**"
+  - "!docs/README.md"
   - "!colophon.yml"
   - "!**/template-sync.yml"
   - "!.github/dependabot.yml"
