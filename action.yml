@@ -1,0 +1,26 @@
+name: A Composite action
+description: GitHub Composite Action Template
+
+branding:
+  icon: plus
+  color: green
+
+inputs:
+  foo:
+    description: foo
+    required: false
+    default: ""
+
+outputs:
+  bar:
+    description: bar
+    value: ${{ steps.main.outputs.bar }}
+
+runs:
+  using: composite
+  steps:
+    - id: main
+      shell: bash
+      run: ${{ github.action_path }}/scripts/index.sh
+      env:
+        FOO: ${{ inputs.pathspec }}

@@ -8,6 +8,8 @@ additional:
   - action-changed-files
 
 files:
+  - "!scripts/**"
+  - "!action.yml"
   - "!README.md"
   - "!docs/README.md"
   - "!colophon.yml"
